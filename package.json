@@ -1,0 +1,14 @@
+{
+	"name":"goods",
+	"version":"0.0.1",
+	"main":"app.js",
+	"dependencies":{
+		"express":"*",
+		"jade":"*",
+		"moment":"*",
+		"mongoose":"",
+		"underscore":"*"
+	},
+	"author": "zjm",
+	"license": "isc"
+}
