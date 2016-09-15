@@ -3,7 +3,105 @@ html
 	head
 		meta(charset="utf-8")
 		link(rel="stylesheet",type="text/css",href="/bootstrap/css/bootstrap.min.css")
+		link(rel="stylesheet",type="text/css",href="index.css")
 	body
-		h1 hello
+		div.container
+			div.row
+				div.col-sm-12.col-md-12.col-lg-12
+					h1.text-center 管理系统
+					hr.bottom-line
+			div.row
+				div.col-sm-12.col-md-12.col-lg-12
+					ul.nav.nav-tabs(role="tablist")
+						li(role="presentation",class="active")
+							a(href="#home",aria-controls="home",role="tab",data-toggle="tab") 进货记录
+						li(role="presentation")
+							a(href="#profile",aria-controls="profile",role="tab",data-toggle="tab") 品类管理
+					div.tab-content
+						div(role="tabpanel",class="tab-pane active",id="home")
+							div.search-area
+								div.row
+									div.col-sm-9.col-md-9.col-lg-9
+										div.row.form-horizontal
+											label.col-sm-2.col-md-2.col-lg-2.control-label 买主姓名:
+											div.col-sm-10.col-md-10.col-lg-10
+												input.form-control.username
+											hr
+											label.col-sm-2.col-md-2.col-lg-2.control-label 起止日期:
+											div.col-sm-5.col-md-5.col-lg-5
+												input(class="form-control start-date",type="text")
+											div.col-sm-5.col-md-5.col-lg-5
+												input(class="form-control end-date",type="text")
+									div.col-sm-3.col-md-3.col-lg-3
+										button.btn.btn-primary.btn-search 搜索
+							div(id="item_list",class="item-list")
+								table.table.table-hover
+									thead
+										tr
+											td 选择
+											td 买主姓名
+											td 数目
+											td 价格
+											td 日期
+											td 操作
+									tbody
+										tr
+											td
+												input(type="checkbox")
+											td 张三
+											td 30
+											td 50
+											td 2013-09-05
+											td
+												a(href="#")
+													span.glyphicon.glyphicon-remove(aria-hidden="true")
+												&nbsp;&nbsp;
+												a(href="#")
+													span.glyphicon.glyphicon-pencil(aria-hidden="true")
+										tr
+											td
+												input(type="checkbox")
+											td 张三
+											td 30
+											td 50
+											td 2013-09-05
+											td
+												a(href="#")
+													span.glyphicon.glyphicon-remove(aria-hidden="true")
+												&nbsp;&nbsp;
+												a(href="#")
+													span.glyphicon.glyphicon-pencil(aria-hidden="true")
+										tr
+											td
+												input(type="checkbox")
+											td 张三
+											td 30
+											td 50
+											td 2013-09-05
+											td
+												a(href="#")
+													span.glyphicon.glyphicon-remove(aria-hidden="true")
+												&nbsp;&nbsp;
+												a(href="#")
+													span.glyphicon.glyphicon-pencil(aria-hidden="true")
+								nav(aria-label="Page navigation")
+									ul.pagination
+										li.disabled
+											a(href="#",aria-label="Previous")
+												span(aria-hidden="true") &laquo;
+										li.active
+											a(href="#") 1
+										li
+											a(href="#") 2
+										li
+											a(href="#") 3
+										li
+											a(href="#",aria-label="Next")
+												span(aria-hidden="true") &raquo;
+						div(role="tabpanel",class="tab-pane",id="profile")
+							ul
+								li profile1
+								li profile2
+
 		script(src="/jquery/jquery-3.1.0.min.js")
 		script(src="/bootstrap/js/bootstrap.js")
