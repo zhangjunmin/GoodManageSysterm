@@ -13,3 +13,9 @@
 	border-radius: 10px;
 	margin: 6px auto auto 20px;
 }
+.list-edit{
+	border-bottom: 1px solid #ccc;
+}
+.list-edit #btn_delete{
+	margin-right: 5px;
+}
