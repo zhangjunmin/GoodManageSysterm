@@ -1,14 +1,15 @@
 {
-	"name":"goods",
-	"version":"0.0.1",
-	"main":"app.js",
-	"dependencies":{
-		"express":"*",
-		"jade":"*",
-		"moment":"*",
-		"mongoose":"",
-		"underscore":"*"
-	},
-	"author": "zjm",
-	"license": "isc"
+  "name": "goods",
+  "version": "0.0.1",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "*",
+    "jade": "*",
+    "moment": "*",
+    "mongoose": "",
+    "underscore": "*"
+  },
+  "author": "zjm",
+  "license": "isc"
 }

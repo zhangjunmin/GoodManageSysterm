@@ -38,6 +38,7 @@ html
 								button#btn_delete.btn.btn-primary.disabled 删除
 								button#btn_add.btn.btn-primary 添加
 							div(id="item_list",class="item-list")
+							- if (cargos&&cargos.length)
 								table.table.table-hover
 									thead
 										tr
@@ -50,62 +51,39 @@ html
 											td 日期
 											td 操作
 									tbody
-										tr
-											td
-												input(type="checkbox")
-											td 张三
-											td 不锈钢
-											td 30
-											td 50
-											td 2013-09-05
-											td
-												a(href="#")
-													span.glyphicon.glyphicon-remove(aria-hidden="true")
-												&nbsp;&nbsp;
-												a(href="#")
-													span.glyphicon.glyphicon-pencil(aria-hidden="true")
-										tr
-											td
-												input(type="checkbox")
-											td 张三
-											td 不锈钢
-											td 30
-											td 50
-											td 2013-09-05
-											td
-												a(href="#")
-													span.glyphicon.glyphicon-remove(aria-hidden="true")
-												&nbsp;&nbsp;
-												a(href="#")
-													span.glyphicon.glyphicon-pencil(aria-hidden="true")
-										tr
-											td
-												input(type="checkbox")
-											td 张三
-											td 不锈钢
-											td 30
-											td 50
-											td 2013-09-05
-											td
-												a(href="#")
-													span.glyphicon.glyphicon-remove(aria-hidden="true")
-												&nbsp;&nbsp;
-												a(href="#")
-													span.glyphicon.glyphicon-pencil(aria-hidden="true")
-								nav(aria-label="Page navigation")
-									ul.pagination
-										li.disabled
-											a(href="#",aria-label="Previous")
-												span(aria-hidden="true") &laquo;
-										li.active
-											a(href="#") 1
-										li
-											a(href="#") 2
-										li
-											a(href="#") 3
-										li
-											a(href="#",aria-label="Next")
-												span(aria-hidden="true") &raquo;
+										- cargos.forEach(function(cargo){
+											tr
+												td
+													input(type="checkbox")
+												td #{cargo.user}
+												td #{cargo.category}
+												td #{cargo.number}
+												td #{cargo.amount}
+												td #{moment.format(cargo.updateDate,'YYYY-MM-DD')}
+												td
+													a(href="#")
+														span.glyphicon.glyphicon-remove(aria-hidden="true")
+													&nbsp;&nbsp;
+													a(href="#")
+														span.glyphicon.glyphicon-pencil(aria-hidden="true")
+										- })
+
+							- else
+								p.data-empty 没有搜索到相关数据
+									nav(aria-label="Page navigation")
+										ul.pagination
+											li.disabled
+												a(href="#",aria-label="Previous")
+													span(aria-hidden="true") &laquo;
+											li.active
+												a(href="#") 1
+											li
+												a(href="#") 2
+											li
+												a(href="#") 3
+											li
+												a(href="#",aria-label="Next")
+													span(aria-hidden="true") &raquo;
 						div(role="tabpanel",class="tab-pane",id="profile")
 							ul
 								li profile1
@@ -113,3 +91,4 @@ html
 
 		script(src="/jquery/jquery-3.1.0.min.js")
 		script(src="/bootstrap/js/bootstrap.js")
+		script(src="index.js")
